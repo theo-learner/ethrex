@@ -124,6 +124,10 @@
   - [FAQ](./ethrex_replay/faq.md)
 - [Interactive REPL](./developers/repl.md)
 - [CLI reference](./CLI.md)
+- [Project analysis (idea-based strategy)](./developers/project-analysis.md)
+- [Ops Agent 구현 계획](./ops-agent/implementation-plan.md)
+- [Ops Agent 모니터링 통합 전략](./ops-agent/monitoring-integration.md)
+- [Ops Agent 6개월 구현 로드맵](./ops-agent/roadmap-6months.md)
 - [Release Process](./developers/release-process.md)
 - [Troubleshooting]()
 
