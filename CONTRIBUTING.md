@@ -63,6 +63,11 @@ If a CI job fails with a `403 Forbidden` / `denied: installation not allowed to 
 
 For detailed guides, architecture, and API references, see the [Developer Docs](docs/developers/README.md).
 
+## Branch-Scoped Rules (`feat/ops-agent`)
+
+If you are working on the `feat/ops-agent` branch, read [`AGENTS.md`](AGENTS.md) first.
+The rules in that file are branch-scoped and are not general project-wide rules for all branches.
+
 ### Documentation Contributions
 
 - See [`docs/CONTRIBUTING_DOCS.md`](docs/CONTRIBUTING_DOCS.md) for documentation-specific guidelines.
