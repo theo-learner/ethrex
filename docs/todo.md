@@ -246,3 +246,142 @@ Evaluate current `ethrex` against three product ideas and rewrite `docs/develope
 
 - `mdbook build` 미실행
 - 코드/테스트 실행 없음(문서화 요청 범위)
+
+---
+
+## Task Checklist (2026-02-22) - Fork 작업 방식/자동 동기화 문서화
+
+### Goal
+
+`theo-learner/ethrex` 포크 기반 작업 방식과, push 시 `upstream/main` 최신 반영을 자동화하는 방법을 개발자 문서로 정리한다.
+
+### Plan
+
+- [x] 포크/업스트림 리모트 표준 구조 문서화
+- [x] 일상 브랜치 작업 흐름 문서화
+- [x] push 시 자동 동기화(`git push-theo` alias) 방법 문서화
+- [x] 충돌 처리/force-with-lease/main 보호 규칙 명시
+- [x] 개발자 문서 인덱스 링크 반영
+
+### Step Notes
+
+1. 실무형 자동화 선택
+- pre-push 훅보다 동작 예측이 쉬운 `git push-theo` alias 방식을 권장안으로 제시했다.
+
+2. 안전 규칙 포함
+- `main`은 `ff-only`, feature branch rebase, 필요 시 `--force-with-lease`를 명시했다.
+
+3. 접근성 개선
+- `docs/SUMMARY.md`와 `docs/developers/README.md`에서 새 가이드 링크를 추가했다.
+
+### Review
+
+#### What changed
+
+- Added: `docs/developers/fork-workflow.md`
+- Updated: `docs/SUMMARY.md`
+- Updated: `docs/developers/README.md`
+- Updated: `docs/todo.md`
+- Updated: `docs/lessons.md`
+
+#### Verification run
+
+- 문서 링크와 명령어 문법 수동 검토
+
+#### Verification not run
+
+- `mdbook build` 미실행
+- 코드/테스트 실행 없음(문서화 요청 범위)
+
+---
+
+## Task Checklist (2026-02-23) - Ops Agent 운영 채널 변경
+
+### Goal
+
+`docs/ops-agent/implementation-plan.md`의 운영 채널을 Slack에서 텔레그램 봇/디스코드로 변경한다.
+
+### Plan
+
+- [x] 운영 채널 정책 문구 변경
+- [x] 승인 게이트웨이/위험도 정책/단계별 구현 계획 내 Slack 의존 문구 치환
+- [x] 테스트/리스크 항목의 채널 의존 문구 치환
+
+### Review
+
+#### What changed
+
+- Updated: `docs/ops-agent/implementation-plan.md`
+- Updated: `docs/todo.md`
+- Updated: `docs/lessons.md`
+
+#### Verification run
+
+- `rg`로 Slack 잔존 문구 확인 후 채널 문구 반영 검증
+
+#### Verification not run
+
+- `mdbook build` 미실행
+
+---
+
+## Task Checklist (2026-02-23) - 자율 운영 목적/계획 전역 규칙화
+
+### Goal
+
+자율 운영 AI agent 구현 목적과 구현 계획을 프로젝트 전역 규칙으로 설정해, 이후 코드 변경 시 목적 드리프트를 방지한다.
+
+### Plan
+
+- [x] 루트 전역 규칙 파일(`AGENTS.md`) 추가
+- [x] 구현 목적/소스 오브 트루스/변경 규칙/PR 체크리스트 명시
+- [x] `CONTRIBUTING.md`에서 전역 규칙 참조 링크 추가
+- [x] 작업/학습 기록 업데이트
+
+### Review
+
+#### What changed
+
+- Added: `AGENTS.md`
+- Updated: `CONTRIBUTING.md`
+- Updated: `docs/todo.md`
+- Updated: `docs/lessons.md`
+
+#### Verification run
+
+- 문서 경로/참조 링크 수동 확인 (`AGENTS.md` <-> `CONTRIBUTING.md`)
+
+#### Verification not run
+
+- `mdbook build` 미실행
+
+---
+
+## Task Checklist (2026-02-23) - AGENTS 규칙 브랜치 스코프 한정
+
+### Goal
+
+`AGENTS.md` 규칙을 프로젝트 전역이 아니라 `feat/ops-agent` 브랜치 한정 규칙으로 명확히 조정한다.
+
+### Plan
+
+- [x] `AGENTS.md`에 scope 섹션 추가 (`feat/ops-agent` only)
+- [x] `Global` 표현을 `Branch-Scoped` 표현으로 변경
+- [x] `CONTRIBUTING.md` 안내 문구를 브랜치 한정으로 수정
+
+### Review
+
+#### What changed
+
+- Updated: `AGENTS.md`
+- Updated: `CONTRIBUTING.md`
+- Updated: `docs/todo.md`
+- Updated: `docs/lessons.md`
+
+#### Verification run
+
+- 문서 내 스코프/용어 수동 검토
+
+#### Verification not run
+
+- `mdbook build` 미실행

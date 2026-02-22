@@ -9,7 +9,7 @@ Ethrex L1/L2 운영 중 발생하는 이슈를 에이전트가 **탐지 → 판�
 
 - 배포 형태: **사이드카 서비스**
 - 자동화 수준: **제한적 자동조치**
-- 운영 채널: **Slack 중심 알림/승인**
+- 운영 채널: **텔레그램 봇/디스코드 알림·승인**
 - 적용 범위: **동기화·정체, 시퀀서/커미터, 인프라 자원·로그**
 
 ---
@@ -76,7 +76,7 @@ Ethrex L1/L2 운영 중 발생하는 이슈를 에이전트가 **탐지 → 판�
 - 안전 가드(allowlist, rate limit, max retry, timeout) 적용
 
 5. `approval-gateway`
-- Slack ChatOps 승인/거절 처리
+- 텔레그램 봇/디스코드 승인/거절 처리
 - 승인 토큰 발행/만료/검증
 
 6. `auditor`
@@ -138,7 +138,7 @@ MVP: SQLite
 
 3. High
 - 노드 재기동, committer 제어
-- Slack 승인 필요
+- 텔레그램 봇/디스코드 승인 필요
 
 4. Critical
 - 자동 조치 금지
@@ -247,7 +247,7 @@ MVP: SQLite
 
 1. collector + diagnoser 구현
 2. incident 저장/조회 구현
-3. Slack 알림 연동
+3. 텔레그램 봇/디스코드 알림 연동
 
 **완료 기준**
 - 3개 도메인에서 incident 생성/상태 전이 정상 동작
@@ -264,7 +264,7 @@ MVP: SQLite
 ### Phase 3. 승인 기반 고위험 조치 (1주)
 
 1. approval-gateway 구현
-2. Slack 승인 토큰 흐름 구현
+2. 텔레그램 봇/디스코드 승인 토큰 흐름 구현
 3. 고위험 조치 승인 후 실행 연결
 
 **완료 기준**
@@ -294,7 +294,7 @@ MVP: SQLite
 
 1. Prometheus/RPC mock 기반 incident lifecycle
 2. L2 Admin API 호출 성공/실패 분기
-3. Slack 승인 시나리오
+3. 텔레그램 봇/디스코드 승인 시나리오
 
 ### 10.3 장애 시뮬레이션
 
@@ -342,7 +342,7 @@ MVP: SQLite
 2. 승인 지연으로 복구 지연
 - 대응: 승인 타임아웃 후 자동 에스컬레이션
 
-3. 외부 의존성 불안정(Slack/Prometheus)
+3. 외부 의존성 불안정(텔레그램/디스코드/Prometheus)
 - 대응: 폴백 채널(로컬 로그/CLI), 재시도 백오프
 
 4. 플레이북 드리프트
